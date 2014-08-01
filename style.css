@@ -1,38 +1,14 @@
 body{background:#444;}
-
 .top, .top a {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 600; 
-	color: #ed207f;
-    height: 110px;
-	text-align: center;
-	animation: fadein .5s;
-    -moz-animation: fadein .5s;
-    -webkit-animation: fadein .5s;
-    -o-animation: fadein .5s;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+	font-family: 'Open Sans', sans-serif; font-weight: 600; height: 110px; text-align: center;
+	animation: fadein .5s; -moz-animation: fadein .5s; -webkit-animation: fadein .5s; -o-animation: fadein .5s;
 }
-
-.vcent{ 
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    
-}
-
+.vcent{ position: relative; top: 50%; transform: translateY(-50%);}
 .face{margin-top: -60px; padding-bottom: 40px; font-size: 200px; word-spacing: 60px;}
-
 .innbox, .innbox a{width:80%; height: 50px; font-family: 'Open Sans', sans-serif; font-size: 25px; color:#f15; text-align: center;}
-
-.small, .small a{font-size: 5vmin; color:#E2E2E2; display:block !important; text-decoration: none;}
-.small a{font-size: 5vw;}
+.small, .small a{font-size: 5vw; color:#E2E2E2; display:block !important; text-decoration: none;}
 .small a:hover{color:#ed207f;}
 
-.top div{cursor:pointer; height:100%; color:#ed207f;}
-
-.top div:hover span { color: #ed207f;}
 
 @keyframes fadein {from { opacity:0;} to { opacity:1;}}
 @-moz-keyframes fadein {from {opacity:0;} to {opacity:1;}}
