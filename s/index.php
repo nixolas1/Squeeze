@@ -23,8 +23,11 @@ if(isset($long)){                                          // create short url
 }
 else if(sizeof($short)>0){                                          // go to long url, given short
     $long=$list[$short];
-    header("Location: ".$long);
-    exit;
+    if(!isset($long)){$long=" ";$host="";$short="URL Has No Juice";}
+    else{
+        header("Location: ".$long);
+        exit;
+    }
 }
 ?>
 
