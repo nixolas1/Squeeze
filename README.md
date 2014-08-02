@@ -1,5 +1,6 @@
 Squeeze
 =======
+###The world's squishiest URL shortener!
 
 Demo: http://nixo.no/s
 
