@@ -1,16 +1,12 @@
 <?php
-$short = $_GET['s'];
+$host = 'http://'.$_SERVER['HTTP_HOST'].'/+';                   // change '/+' to '/s?' if you dont use .htaccess redirect
+$short = $_SERVER['QUERY_STRING'];
 $long = $_GET['l'];
 $list = json_decode(file_get_contents('url.json'), true);
-$host = 'http://'.$_SERVER['HTTP_HOST'].'/+';                   // change '/+' to '/s?' if you dont use .htaccess redirect
 $len = 1;                                                       // initial length of new short urls
 
-if(isset($short)){  //or is like /?s                                            // go to long url, given short
-    $long=$list[$short];
-    header("Location: ".$long);
-    exit;
-}
-else if(isset($long)){                                          // create short url
+
+if(isset($long)){                                          // create short url
     $long=base64_decode($long);
     $split=explode(' ', $long);
     if(sizeof($split)>1){
@@ -24,6 +20,11 @@ else if(isset($long)){                                          // create short 
         }
     }
     file_put_contents("url.json", json_encode(array_merge($list,array ($short=>$long))));
+}
+else if(sizeof($short)>0){                                          // go to long url, given short
+    $long=$list[$short];
+    header("Location: ".$long);
+    exit;
 }
 ?>
 
