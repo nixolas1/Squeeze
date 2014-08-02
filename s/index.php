@@ -9,9 +9,10 @@ $len = 1;                                                       // initial lengt
 if(isset($long)){                                          // create short url
     $long=base64_decode($long);
     $split=explode(' ', $long);
+    //todo: check max length, check that its an URI, give proper error
     if(sizeof($split)>1){
         $short=$split[0]; $long=$split[1]; $listed=$list[$short];
-        if(isset($listed))die("URL '".$short."' taken.");
+        if(isset($listed)){$long=""; $host="'".$short."' "; $short="has already been squished";}
     }else{
         $hash=base64_encode(crc32($long));
         $short = substr($hash, 0, $len);
@@ -19,15 +20,12 @@ if(isset($long)){                                          // create short url
             $short = substr($hash, 0, $len); $len++; $listed=$list[$short];
         }
     }
-    file_put_contents("url.json", json_encode(array_merge($list,array ($short=>$long))));
+    if($long!="")file_put_contents("url.json", json_encode(array_merge($list,array ($short=>$long))));
 }
-else if(sizeof($short)>0){                                          // go to long url, given short
+else if(sizeof($short)>0 && $short!=""){                                          // go to long url, given short
     $long=$list[$short];
-    if(!isset($long)){$long=" ";$host="";$short="URL Has No Juice";}
-    else{
-        header("Location: ".$long);
-        exit;
-    }
+    if(!isset($long)){$long=" ";$host="";$short="That URL Has No Juice";}
+    else{ header("Location: ".$long); exit; }
 }
 ?>
 
