@@ -1,5 +1,6 @@
 Squeeze
 =======
+###The world's squishiest URL shortener!
 
 Demo: http://nixo.no/s
 
@@ -13,7 +14,7 @@ Demo: http://nixo.no/s
 ###Installation
   * Place the files in a subdirectory "s" on your root
   * OPTION 1: Add this line to your root .htaccess: ```RewriteRule ^\+(.*)$ /s?$1```
-  * OPTION 2: Edit line 5 in index.php from ```'/+'``` to ```'/s?'``` This will make your short urls like ```host.com/s?aBc``` instead of ```host.com/+aBc```
+  * OPTION 2: Edit line 2 in index.php from ```'/+'``` to ```'/s?'``` This will make your short urls like ```host.com/s?aBc``` instead of ```host.com/+aBc```
   
 ###Usage
   * Go to domain.com/s/ to shorten a url
