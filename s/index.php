@@ -5,9 +5,8 @@ $long = $_GET['l'];
 $list = json_decode(file_get_contents('url.json'), true);
 $len = 1;                                                       // initial length of new short urls
 
-
 if(isset($long)){                                          // create short url
-    $long=base64_decode($long);
+    $long=urldecode($long);
     $split=explode(' ', $long);
     //todo: check max length, check that its an URI, give proper error
     if(sizeof($split)>1){
@@ -47,7 +46,7 @@ else if(sizeof($short)>0 && $short!=""){                                        
         </div>
         <script type="text/javascript">
             function submitform() {
-                document.ufo.l.value = btoa(document.ufo.l.value); document.ufo.submit();
+                document.ufo.l.value = encodeURIComponent(document.ufo.l.value); document.ufo.submit();
             }
         </script>
     </body>
