@@ -1,4 +1,4 @@
-Squeeze
+Squish
 =======
 ###The world's squishiest URL shortener!
 
@@ -6,7 +6,7 @@ Demo: http://nixo.no/s
 
 ###Features:
   * Simple installation, usage and design
-  * Simple requirements: Any php version, No databases, Only 3 files
+  * Simple requirements: Any php version, No databases, Only 3 files, .htaccess optional
   * Custom urls and auto urls
   * Easily have short urls from the root of your host without interfering
   * Same short URL for same long URL, every time
