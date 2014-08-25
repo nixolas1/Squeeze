@@ -39,7 +39,7 @@ else if(sizeof($short)>0 && $short!=""){                                        
                 <?php if(isset($long)) echo '<a class="vcent" href="'.$host.$short. '">'.$host.$short.'</a>'; ?>
                 <form <?php if(isset($long)) echo 'style="display:none;"';?>
                       name="ufo" action="" class="" id="base" method="get" onsubmit="return submitform();">
-                    <div class="face">&gt; &lt;</div>
+                      <div title="Get the source on github!" class="face" onclick="javascript:location.href='http://nixo.no/+git'">&gt; &lt;</div>
                     <input id="longurl" name="l" type="text" class="innbox" />
                 </form>
             </div>
